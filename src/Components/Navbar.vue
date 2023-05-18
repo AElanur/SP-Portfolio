@@ -3,12 +3,10 @@
 </script>
 
 <template>
-    <div class="m-5 rounded h-12 flex justify-between text-mainAcc ">
-        <div class="mt-auto mb-auto ml-5 flex ">
-            <span class="font-bold">Theory of Computation</span>
-        </div>
-        <div>
-            <fIcon class="w-10 h-10" :icon="['fas', 'bars']" />
+    <div class="mt-5 h-12 flex justify-between text-mainAcc ">
+        <div class="mt-auto mb-auto flex text-xl space-x-10">
+            <fIcon class="w-8 h-8" :icon="['fas', 'house']" />
+            <span @click="" class="mt-auto mb-auto cursor-pointer">About me</span>
         </div>
     </div>
 </template>
