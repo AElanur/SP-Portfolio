@@ -1,17 +1,19 @@
 <script>
 import Navbar       from './Components/Navbar.vue'
 import Skils        from './Components/Skills.vue'
-import AboutMe      from './Components/AboutMe.vue'
+import Aboutme      from './Components/Aboutme.vue'
+
 export default {
-  name: 'Main',
+  nSkils: 'Main',
   components: {
     Navbar,
     Skils,
-    AboutMe
+    Aboutme
   },
   data() {
     return {
-        AmE: false
+        Skils: false,
+        Ame: false
     }
   },
   methods: {
@@ -27,11 +29,11 @@ export default {
     },
     showInfo() {
         let image = document.querySelector('.pPicture');
-        let me = document.querySelector('.abMe');
+        let me = document.querySelector('.skills');
         let card = document.querySelector('.pInfo');
 
-        if (this.AmE == false) {
-            this.AmE = !this.AmE;
+        if (this.Skils == false) {
+            this.Skils = !this.Skils;
             if (image.classList.contains('hideInfo')) {
                 image.classList.remove('hideInfo');
                 image.classList.add('pulse');
@@ -65,7 +67,7 @@ export default {
             }
             
             setTimeout(() => {
-                this.AmE = !this.AmE;
+                this.Skils = !this.Skils;
             }, 450);
             setTimeout(() => {
                 card.classList.add('rounded-xl')
@@ -73,8 +75,14 @@ export default {
             }, 450);
             
         }
-    }
-  }
+    },
+
+    },
+    created: function() {
+        this.emitter.on('aboutMe', (value) => {
+        this.Ame = value
+      })
+    },
 }
 </script>
 
@@ -93,10 +101,9 @@ export default {
                                 @mouseenter="test" 
                                 @mouseleave="reset" 
                                 @click="showInfo"
-                                class="pPicture border-mainCol border-2 rounded-full w-60 h-60 m-5 overflow-hidden">
+                                class="pPicture rounded-full w-60 h-60 m-5 overflow-hidden">
                                 <img src="../src/img/hijab.png" alt="">
-                            
-                            </div>
+                                </div>
                             </div>
                             
                             
@@ -118,9 +125,15 @@ export default {
                 </div>
             </div>
             <div>
-                <Skils 
-                v-show="AmE"
-                class="abMe z-0 rounded-b-xl"/>
+                <Skils
+                    v-show="Skils"
+                    class="skills z-0 rounded-b-xl"
+                />
+
+                <Aboutme
+                    v-show="Ame"
+                    class="abMe z-0 rounded-b-xl"
+                />
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
     <div class="bg-black w-full">
-        <div>
-            <span class="p-5">Skills</span>
+        <div class="divide-y p-5">
+            <span class="mb-5 text-xl">Skills</span>
             <div class="flex flex-row p-5">
                 <div class="flex flex-col w-full">
                     <div class="flex flex-row space-x-2">
