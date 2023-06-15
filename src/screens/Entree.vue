@@ -1,8 +1,10 @@
 <script>
 import { HalfCircleSpinner } from 'epic-spinners'
+import Main                  from '../Main.vue'
 export default { 
     components: {
-        HalfCircleSpinner
+        HalfCircleSpinner,
+        Main
     },
     methods: { 
         start() { 
@@ -16,19 +18,31 @@ export default {
                 circle[0]   .style.borderColor = "transparent";
                 btn[0]      .style.display = "none";
                 this        .loading = true;
+                this        .loadMain()
             }, 1000);
+        },
+        loadMain() {
+            let Mainpage = document.getElementsByClassName("Mainpage");
+            setTimeout(() => {
+                this        .entree = false;
+                this        .main = true;
+                this        .loading = false;
+                Mainpage[0] .classList.add("showMainpage");
+            }, 2000);
         }
     },
     data() { 
         return { 
-            loading: false
+            loading: false,
+            entree: true,
+            main : false
         }
     }
 }
 </script>
 
 <template>
-    <div  class="w-screen h-screen justify-center flex">
+    <div v-show="entree" class="w-screen h-screen justify-center flex">
         <div @click="start" class="circle rounded-full border-4 w-80 h-80 m-auto flex justify-center">
             <div class="m-auto">
                 <fIcon class="btnStart w-32 h-32" :icon="['fas', 'play']"/>
@@ -36,5 +50,7 @@ export default {
             </div>
         </div>
     </div>
+
+    <Main class="Mainpage" v-show="main"/>
 </template>
 

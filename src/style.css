@@ -1,15 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans&family=Raleway:wght@300&display=swap');
 
 .bgInfo {
     background: -moz-linear-gradient(top, #F9D5DA  0%, rgba(0,0,0,0) 100%);
+}
+
+* { 
+    font-family: 'Encode Sans', sans-serif;
 }
 
 .expand { 
     /* animation: expand 0.5s ease-in-out;
     height: 17rem;
     width: 17rem; */
+}
+
+.textColor { 
+    /*  give me a white ish color like the entree  */
+    color: #e5e7eb;;
 }
 
 .reset { 
@@ -21,7 +31,7 @@
 .showMe {
     /*  let component slide in from top to bottom */
     animation: showMe 0.5s ease-in-out;
-    transform: translateY(0%);
+    transform: translateX(0%);
 }
 
 .pulse { 
@@ -36,10 +46,10 @@
 @keyframes hide { 
     /*  let it slide in from top to bottom */
     0% { 
-        transform: translateY(0%);
+        transform: translateX(0%);
     }
     100% { 
-        transform: translateY(-100%);
+        transform: translateX(-100%);
     }
 }
 
@@ -59,10 +69,10 @@
 @keyframes showMe { 
     /*  let it slide in from top to bottom */
     0% { 
-        transform: translateY(-100%);
+        transform: translateX(-100%);
     }
     100% { 
-        transform: translateY(0%);
+        transform: translateX(0%);
     }
 }
 
@@ -102,7 +112,7 @@
 
 .twist { 
     animation: rotation 1s;
-    width: 0rem;
+    width: 1rem;
 }
 
 .showSpin { 
@@ -114,6 +124,20 @@
     animation: fadeCircle 1s; 
     width: 0rem; 
     height: 0rem;
+}
+
+.showMainpage {
+    animation: showMainpage 2s;
+    transform: translateY(0%);
+}
+
+@keyframes showMainpage { 
+    0% { 
+        transform: translateY(-100%);
+    }
+    100% { 
+        transform: translateY(0%);
+    }
 }
 
 @keyframes rotateShow {
@@ -133,7 +157,7 @@
     } 
     100% {
         transform:rotate(360deg);
-        width: 0rem;
+        width: 0.5rem;
     }
 }
 

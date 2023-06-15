@@ -13,7 +13,7 @@ export default {
   data() {
     return {
         Skils: false,
-        Ame: false
+        Ame: true
     }
   },
   methods: {
@@ -87,22 +87,21 @@ export default {
 </script>
 
 <template>
-    <div class="w-screen h-screen bg-mainCol">
+    <div class="w-screen h-screen">
         <div class="flex flex-col w-6/12 h-full m-auto">  
             <header class="w-full">
                 <Navbar/>
             </header>
-            <div class="w-full flex justify-center z-10 display">
+            <div class="flex flex-col">
+                <div class="w-full flex justify-center z-10 display">
                 <div class="w-full pt-16 flex justify-center">
                     <div class="relative flex-1 justify-center">
-                        <div class="pInfo bg-black flex items-center justify-center flex-col space-y-2 rounded-xl">
-                            <div class="bgInfo w-full m-auto flex items-center justify-center bg-pink-200 rounded-t-xl">
+                        <div class="pInfo items-center justify-center flex-col space-y-2 rounded-xl">
+                            <div class="w-full m-auto flex items-center justify-center rounded-t-xl">
                                 <div 
-                                @mouseenter="test" 
-                                @mouseleave="reset" 
                                 @click="showInfo"
                                 class="pPicture rounded-full w-60 h-60 m-5 overflow-hidden">
-                                <img src="../src/img/hijab.png" alt="">
+                                <img src="../src/img/ahsen.jpg" alt="">
                                 </div>
                             </div>
                             
@@ -112,7 +111,7 @@ export default {
                                     Ahsen Kilic
                                 </span>
                                 <div class="flex flex-row space-x-2">
-                                    <span class="text-center text-lg">
+                                    <span class="text-center text-lg m-auto">
                                         Student software engineering
                                     </span>
                                 </div>
@@ -124,7 +123,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="">
                 <Skils
                     v-show="Skils"
                     class="skills z-0 rounded-b-xl"
@@ -134,6 +133,8 @@ export default {
                     v-show="Ame"
                     class="abMe z-0 rounded-b-xl"
                 />
+            </div>
+
             </div>
         </div>
     </div>

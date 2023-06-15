@@ -66,10 +66,12 @@ export default {
 </script>
 
 <template>
-    <div class="mt-5 h-12 flex justify-between text-mainAcc ">
+    <div class="mt-5 h-12 flex justify-between textColor">
         <div class="mt-auto mb-auto flex text-xl space-x-10">
-            <fIcon class="w-8 h-8" :icon="['fas', 'house']" />
-            <span @click="showAbout" class="mt-auto mb-auto cursor-pointer">About me</span>
+            <span @click="showAbout" class="textColormt-auto mb-auto cursor-pointer">About me</span>
+            <span @click="showAbout" class="mt-auto mb-auto cursor-pointer">Skills</span>
+            <span @click="showAbout" class="mt-auto mb-auto cursor-pointer">Education</span>
+            <span @click="showAbout" class="mt-auto mb-auto cursor-pointer">Reference</span>
         </div>
     </div>
 </template>
