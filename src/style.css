@@ -110,6 +110,12 @@
     width: 80px; 
 }
 
+.hideCircle { 
+    animation: fadeCircle 1s; 
+    width: 0rem; 
+    height: 0rem;
+}
+
 @keyframes rotateShow {
     0% { 
         transform:rotate(-360deg);
@@ -128,6 +134,18 @@
     100% {
         transform:rotate(360deg);
         width: 0rem;
+    }
+}
+
+@keyframes fadeCircle { 
+    /* make circle smaller */
+    0% { 
+        width: 20rem; 
+        height: 20rem;
+    }
+    100% { 
+        width: 0rem; 
+        height: 0rem;
     }
 }
 
