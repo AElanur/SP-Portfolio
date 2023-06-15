@@ -67,6 +67,7 @@ export default {
 
 <template>
     <div class="mt-5 h-12 flex justify-between textColor">
+        <!-- TODO: Make hamburger for navigation tabs, dont make it responsive by reducing the font size -->
         <div class="mt-auto mb-auto flex text-xl space-x-10">
             <span @click="showAbout" class="textColormt-auto mb-auto cursor-pointer">About me</span>
             <span @click="showAbout" class="mt-auto mb-auto cursor-pointer">Skills</span>

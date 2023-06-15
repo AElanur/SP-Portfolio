@@ -88,7 +88,7 @@ export default {
 
 <template>
     <div class="w-screen h-screen">
-        <div class="flex flex-col w-6/12 h-full m-auto">  
+        <div class="flex flex-col min-[320px]:w-10/12 sm:w-10/12 w-1/2 h-full m-auto">  
             <header class="w-full">
                 <Navbar/>
             </header>
@@ -100,7 +100,7 @@ export default {
                             <div class="w-full m-auto flex items-center justify-center rounded-t-xl">
                                 <div 
                                 @click="showInfo"
-                                class="pPicture rounded-full w-60 h-60 m-5 overflow-hidden">
+                                class="pPicture rounded-full min-[320px]:w-48 min-[320px]:h-48  w-60 h-60 m-5 overflow-hidden">
                                 <img src="../src/img/ahsen.jpg" alt="">
                                 </div>
                             </div>
