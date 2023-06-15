@@ -100,3 +100,34 @@
     }
 }
 
+.twist { 
+    animation: rotation 1s;
+    width: 0rem;
+}
+
+.showSpin { 
+    animation: rotateShow 2s;
+    width: 80px; 
+}
+
+@keyframes rotateShow {
+    0% { 
+        transform:rotate(-360deg);
+        width: 0rem; 
+    } 100% {
+        transform:rotate(0deg);
+        width: 80px;
+    }
+}
+
+@keyframes rotation { 
+    0% { 
+        transform:rotate(0deg);
+        width: 8rem;
+    } 
+    100% {
+        transform:rotate(360deg);
+        width: 0rem;
+    }
+}
+

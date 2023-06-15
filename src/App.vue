@@ -1,7 +1,7 @@
 <script setup>
-import Main from './Main.vue'
+import Entree from './screens/Entree.vue'
 </script>
 
 <template>
-    <Main/>
+    <Entree/>
 </template>
