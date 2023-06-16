@@ -162,11 +162,6 @@
 }
 
 @keyframes fadeCircle { 
-    /* make circle smaller */
-    0% { 
-        width: 20rem; 
-        height: 20rem;
-    }
     100% { 
         width: 0rem; 
         height: 0rem;

@@ -27,55 +27,6 @@ export default {
         image.classList.add('reset')
         image.classList.remove('expand')
     },
-    showInfo() {
-        let image = document.querySelector('.pPicture');
-        let me = document.querySelector('.skills');
-        let card = document.querySelector('.pInfo');
-
-        if (this.Skils == false) {
-            this.Skils = !this.Skils;
-            if (image.classList.contains('hideInfo')) {
-                image.classList.remove('hideInfo');
-                image.classList.add('pulse');
-                me.classList.add('showMe');
-                me.classList.remove('hideMe');
-                card.classList.remove('rounded-xl')
-                card.classList.add('rounded-t-xl')
-            } else {
-                image.classList.add('pulse');
-                image.classList.add('showInfo');
-                me.classList.add('showMe');
-                card.classList.remove('rounded-xl')
-                card.classList.add('rounded-t-xl')
-            }
-            setTimeout(() => {
-                image.classList.remove('pulse');
-            }, 450);
-
-        } else {
-            if (image.classList.contains('showInfo')) {
-                image.classList.add('hideInfo');
-                image.classList.add('pulse');
-                me.classList.remove('showMe');
-                me.classList.add('hideMe');
-                card.classList.remove('rounded-t-xl')
-            } else {
-                image.classList.add('hideInfo');
-                image.classList.add('pulse');
-                me.classList.add('hideMe');
-                card.classList.remove('rounded-t-xl')
-            }
-            
-            setTimeout(() => {
-                this.Skils = !this.Skils;
-            }, 450);
-            setTimeout(() => {
-                card.classList.add('rounded-xl')
-                image.classList.remove('pulse');
-            }, 450);
-            
-        }
-    },
 
     },
     created: function() {
@@ -98,8 +49,7 @@ export default {
                     <div class="relative flex-1 justify-center">
                         <div class="pInfo items-center justify-center flex-col space-y-2 rounded-xl">
                             <div class="w-full m-auto flex items-center justify-center rounded-t-xl">
-                                <div 
-                                @click="showInfo"
+                                <div
                                 class="pPicture rounded-full min-[320px]:w-48 min-[320px]:h-48  w-60 h-60 m-5 overflow-hidden">
                                 <img src="../src/img/ahsen.jpg" alt="">
                                 </div>
