@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans&family=Raleway:wght@300&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans&family=Raleway:wght@300&display=swap');
 
 .bgInfo {
     background: -moz-linear-gradient(top, #F9D5DA  0%, rgba(0,0,0,0) 100%);
@@ -22,10 +22,32 @@
     color: #e5e7eb;;
 }
 
-.reset { 
-    /* animation: reset 0.5s ease-in-out;
-    height: 15rem;
-    width: 15rem; */
+.returnPosition {
+    animation: return 0.5s;
+    transform: translateX(0%);
+}
+
+@keyframes return {
+    0% { 
+        transform: translateX(-100%) rotate(0deg);
+    }
+    100% { 
+        transform: translateX(0%) rotate(360deg);
+    }
+}
+
+.swapPosition {
+    animation: swap 0.5s;
+    transform: translateX(-100%);
+}
+
+@keyframes swap { 
+    0% { 
+        transform: translateX(0%) rotate(0deg);
+    }
+    100% { 
+        transform: translateX(-100%) rotate(-360deg);
+    }
 }
 
 .showMe {

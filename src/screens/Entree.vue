@@ -43,7 +43,7 @@ export default {
 
 <template>
     <div v-show="entree" class="w-screen h-screen justify-center flex">
-        <div @click="start" class="circle rounded-full border-4 min-[320px]:w-64 min-[320px]:h-64 w-80 h-80 m-auto flex justify-center">
+        <div @click="start" class="circle rounded-full border-4 w-80 h-80 min-[340px]:w-64 min-[340px]:h-64 m-auto flex justify-center">
             <div class="m-auto">
                 <fIcon class="btnStart min-[320px]:w-20 min-[320px]:h-20 w-32 h-32" :icon="['fas', 'play']"/>
                 <half-circle-spinner class="Spinner" :size="80" :animation-duration="1000" color="#FFFFFF" v-show="loading" />

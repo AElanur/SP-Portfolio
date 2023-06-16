@@ -2,6 +2,7 @@
 import Navbar       from './Components/Navbar.vue'
 import Skils        from './Components/Skills.vue'
 import Aboutme      from './Components/Aboutme.vue'
+import {AboutFunction, SkillsFunction, EduFunction, RefFunction}  from './js/AnimationFunctions.js'
 
 export default {
   nSkils: 'Main',
@@ -11,9 +12,17 @@ export default {
     Aboutme
   },
   data() {
+    let data = {
+        image: document.querySelector('.pPicture'),
+        component: null
+    }
+
     return {
-        Skils: false,
-        Ame: true
+        Ame: true,
+        Skills: false,
+        data,
+        Edu: false,
+        Ref: false
     }
   },
   methods: {
@@ -27,6 +36,28 @@ export default {
         image.classList.add('reset')
         image.classList.remove('expand')
     },
+    showInfo() {
+        this.data.image     = document.querySelector('.pPicture')
+        this.data.component = this.Ame
+        this.emitter.on('Test', (target) => {
+            switch (true) {
+                case target.id == 'Skills':
+                    this.Skils = AboutFunction(this.data)
+                    break;
+                case target.id == 'Ame':
+                    this.Ame = SkillsFunction(this.data)
+                    break;
+                case target.id == 'Edu':
+                    this.Edu = EduFunction(this.data)
+                    break;
+                case target.id == 'Reference':
+                    this.Ref = RefFunction(this.data)
+                    break;
+                default:
+                break;
+            }
+        })
+    }
 
     },
     created: function() {
@@ -34,6 +65,9 @@ export default {
         this.Ame = value
       })
     },
+    mounted() {
+        this.showInfo()
+    }
 }
 </script>
 
@@ -51,7 +85,7 @@ export default {
                             <div class="w-full m-auto flex items-center justify-center rounded-t-xl">
                                 <div
                                 class="pPicture rounded-full min-[320px]:w-48 min-[320px]:h-48  w-60 h-60 m-5 overflow-hidden">
-                                <img src="../src/img/ahsen.jpg" alt="">
+                                <img src="../src/img/ahsen.jpg" class=" object-fill" alt="">
                                 </div>
                             </div>
                             
