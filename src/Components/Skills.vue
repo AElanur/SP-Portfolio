@@ -1,3 +1,14 @@
+<script>
+export default {
+    
+    methods: { 
+        start() {
+
+        }
+    }
+}
+</script>
+
 <template>
     <div class="bg-black w-full">
         <div class="divide-y p-5">
