@@ -7,7 +7,7 @@ export default {
     },
     methods: {
         showAbout(target) {
-            this.emitter.emit('Test', target);
+            this.emitter.emit('Show', target.target.id);
         } 
     }
 }

@@ -1,17 +1,25 @@
 export function SkillsFunction(data) {
     let classCheck = data.image.classList.contains("swapPosition")
-    let image = data.image
+    let image   = data.image
+    let text    = data.target
+
     if(classCheck){
-       image.classList.remove("swapPosition")
+        image.classList.remove("swapPosition")
+        text.classList.remove("textAnimation")
         image.classList.add("returnPosition")
         setTimeout(() => {
             image.childNodes[0].src = "../src/img/ahsen.jpg"
-        }, 100); 
-        data.component = false;
+        }, 50); 
         return data.component = true; 
     } 
-    
     image.classList.add("swapPosition")
+    text.classList.add("textAnimation")
+    
+    data.component = false;
+    data.element = true; 
+
+    let skills = document.getElementsByClassName("skills")[0]
+    skills.classList.add("showSkills")
 
     setTimeout(() => {
        image.classList.remove("returnPosition")
@@ -19,8 +27,8 @@ export function SkillsFunction(data) {
 
     setTimeout(() => {
         image.childNodes[0].src = "../src/img/ahsen2.jpg"
-    }, 150); 
-    return data.component = false;
+    }, 50); 
+    return data;
     
 }
 
